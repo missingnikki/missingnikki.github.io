@@ -57,6 +57,18 @@
         <p>We will list all the missing features, suits, and updates here.</p>
     </div>
 
+<!-- Header and Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#dreamweaver">Dreamweaver</a></li>
+                <li><a href="#welfares">Missing Welfares</a></li>
+                <li><a href="#crafting">Missing Crafting Returns</a></li>
+                <li><a href="#updates">Missing Updates</a></li>
+            </ul>
+        </nav>
+    </header>
+
 <!-- Dreamweaver Section -->
 <section id="dreamweaver">
     <h2>Dreamweaver</h2>
@@ -95,8 +107,70 @@
     <p>Here are the Dream weavers missing from our server.</p>
 </section>
 
+<!-- Missing Welfares Section with Tabs -->
+    <section id="welfares">
+        <h2>Missing Welfares</h2>
 
+        <!-- Tab Buttons -->
+        <div class="tab-container">
+            <button class="tab-button" onclick="openTab(event, 'event1')">Event 1</button>
+            <button class="tab-button" onclick="openTab(event, 'event2')">Event 2</button>
+            <button class="tab-button" onclick="openTab(event, 'event3')">Event 3</button>
+            <!-- Add more buttons for events -->
+        </div>
 
+        <!-- Tab Content for Event 1 -->
+        <div id="event1" class="tab-content">
+            <h3>Event 1</h3>
+            <div class="gallery">
+                <!-- Event 1 Images -->
+                <div class="gallery-item">
+                    <a href="path-to-event1-image1.jpg" data-fancybox="gallery">
+                        <img src="path-to-event1-image1.jpg" alt="Event 1 Image 1">
+                    </a>
+                </div>
+                <!-- Add more images for Event 1 -->
+            </div>
+        </div>
+
+        <!-- Tab Content for Event 2 -->
+        <div id="event2" class="tab-content" style="display:none;">
+            <h3>Event 2</h3>
+            <div class="gallery">
+                <!-- Event 2 Images -->
+                <!-- Add images for Event 2 -->
+            </div>
+        </div>
+
+        <!-- Tab Content for Event 3 -->
+        <div id="event3" class="tab-content" style="display:none;">
+            <h3>Event 3</h3>
+            <div class="gallery">
+                <!-- Event 3 Images -->
+                <!-- Add images for Event 3 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Include Fancybox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
+    <!-- Tab Functionality Script -->
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 
 </body>
 </html>
